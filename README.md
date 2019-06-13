@@ -1,5 +1,5 @@
 # NgPokedex
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c978d58f-9a31-4945-87de-cd4640685f5c/deploy-status)](https://app.netlify.com/sites/ng-dex/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/451c5494-b20b-42fd-afe2-16c75b6a3a1c/deploy-status)](https://app.netlify.com/sites/ng-dex/deploys)
 
 [DEMO](https://ng-dex.netlify.com)
 
