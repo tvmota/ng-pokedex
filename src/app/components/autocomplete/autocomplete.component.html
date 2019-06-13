@@ -1,0 +1,49 @@
+<div class="form-autocomplete">
+  <!-- autocomplete input container -->
+  <div class="form-autocomplete-input form-input has-icon-right form-autocomplete-rads">
+
+    <!-- autocomplete chips -->
+    <div class="chip" *ngFor="let selecionado of selecionados">
+      {{ selecionado }}
+      <a href="#" class="btn btn-clear" aria-label="Close" role="button"></a>
+    </div>
+
+    <!-- autocomplete real input box -->
+    <input 
+      class="form-input" 
+      #search 
+      type="text" 
+      (keyup.enter)="procurar(search.value)" 
+      (blur)="limparResultados()" 
+      placeholder="Digite o nome completo ou o numero">
+    <i class="form-icon loading" *ngIf="loadingIcon"></i>
+  </div>
+
+  <!-- autocomplete suggestion list -->
+  <ul class="menu" *ngIf="resultados.length && !erros">
+    <!-- menu list chips -->
+    <li class="menu-item" *ngFor="let resultado of resultados">
+      <a class="c-hand" (click)="getSelectedItem(resultado)">
+        <div class="tile tile-centered">
+          <div class="tile-icon">
+            <img class="img-responsive" [src]="resultado.sprites.front_default" [alt]="resultado.name">
+          </div>
+          <div class="tile-content">
+            #{{ resultado.id }}&nbsp;{{ resultado.name }}
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <ul class="menu" *ngIf="erros && !resultados.length">
+      <li class="menu-item">
+      <a href="#">
+        <div class="tile tile-centered">
+          <div class="tile-content">
+            Houve um erro na busca tente novamente
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

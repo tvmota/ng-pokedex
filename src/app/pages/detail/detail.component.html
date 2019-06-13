@@ -1,0 +1,46 @@
+<div class="columns mb-2">
+  <div class="column col-xs-12 col-sm-10 col-md-10 col-lg-8 col-8 col-mx-auto" *ngIf="pkmnLoad">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title text-capitalize">
+          <img 
+            class="img-responsive p-centered" 
+            [src]="pkmn.sprites.front_default" 
+            [alt]="titulo" 
+            width="200" 
+            height="200">
+          <div class="bg-secondary d-flex s-rounded mt-2 detail-title">
+            <h5 class="text-center my-2">
+              #{{pkmn.id}} {{ pkmn.name }}
+            </h5>
+            <app-badge [tipos]="pkmn.types"></app-badge>
+          </div>
+        </div>
+      </div>
+      <nav class="panel-nav">
+        <div class="divider text-center" data-content="Info"></div>
+      </nav>
+      <div class="panel-body">
+        <div class="columns">
+          <div class="column col-12 mb-2">
+            <span class="text-bold">Weight: </span>
+            <span>{{ math.round(pkmn.weight * 0.2205) }} lbs</span>
+          </div>
+          <div class="column col-12 mb-2">
+            <blockquote class="m-0">
+              <cite class="text-bold">Description</cite>
+              <p class="mt-2">{{ pkmnDescription }}</p>
+            </blockquote>
+          </div>
+          <div class="column col-12">
+            <app-evolution-list [pknmlist]="pkmnEvolutions" [pkmnid]="pkmn.id"></app-evolution-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column col-12" *ngIf="!pkmnLoad">
+    <div class="loading loading-lg"></div>
+    <h4 class="text-center">Carregando</h4>
+  </div>
+</div>

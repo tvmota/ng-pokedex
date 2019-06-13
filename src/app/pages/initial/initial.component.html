@@ -1,0 +1,18 @@
+<div>
+  <div class="columns mb-2">
+    <div class="column col-12">
+      <app-auto-complete (selectedItem)="getAutoCompleteItem($event)"></app-auto-complete>
+    </div>
+  </div>
+  <div class="columns mt-1">
+    <div class="column col-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"  *ngFor="let pkmn of randomPkmn">
+      <app-card [pkmn]="pkmn" (pkmnid)="getPkmnId($event)"></app-card>
+    </div>
+  </div>
+  <div class="columns mt-1" *ngIf="!randomPkmn.length">
+    <div class="column col-12">
+      <div class="loading loading-lg"></div>
+      <h4 class="text-center">Carregando</h4>
+    </div>
+  </div>
+</div>

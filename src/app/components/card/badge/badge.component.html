@@ -1,0 +1,5 @@
+<h6 class="d-inline" *ngFor="let tipo of tipos">
+  <span class="chip text-light text-bold ml-1 badge-text--sm" [ngClass]="tipo.type.name">
+    {{ tipo.type.name | capitalize:tipo.type.name }}
+  </span>
+</h6>

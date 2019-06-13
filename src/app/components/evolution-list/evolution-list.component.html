@@ -1,0 +1,26 @@
+<div class="bouncing-loader" [ngClass]="{'bouncing-loader--hidden': !loading}" *ngIf="noEvolution">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div 
+  class="d-flex evolution-list-wrapper mb-2" [ngClass]="{'evolution-list-wrapper--hidden': loading, 'evolution-list-wrapper--visible': !loading}"
+  *ngIf="noEvolution">
+    <div 
+      class="d-flex"
+      [ngClass]="{'evolution-list-wrapper-single-evolution': pkmnList.length < 3, 'evolution-list-wrapper-multiple-evolution': pkmnList.length > 2}">
+        <div class="px-2" *ngFor="let pkmnitem of pkmnList">
+          <div>
+            <img 
+              class="img-responsive p-centered" 
+              [src]="pkmnitem.sprites.front_default" 
+              [alt]="titulo" 
+              width="100" 
+              height="100">
+          </div>
+          <div class="text-center" [ngClass]="{ 'bg-primary': pkmnid == pkmnitem.id, 'bg-secondary': pkmnid !== pkmnitem.id}">
+            <span class="text-capitalize text-bold">{{ pkmnitem.name }}</span>
+          </div>
+        </div>
+    </div>
+</div>

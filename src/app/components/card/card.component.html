@@ -1,0 +1,18 @@
+<!--div-->
+<div class="card mb-2">
+  <div class="card-image">
+    <app-foto [url]="pkmn.sprites.front_default" [titulo]="pkmn.name" *ngIf="!destruido" (imgClicked)="getImgClicked($event)"></app-foto>
+  </div>
+  <div class="card-header bg-secondary">
+    <h5 class="card-title text-ellipsis">
+      <a class="c-hand" (click)="returnId(pkmn.id)" [title]="pkmn.name|capitalize:pkmn.name">
+        {{'#' + pkmn.id }} {{ pkmn.name|capitalize:pkmn.name }}
+      </a>
+    </h5>
+  </div>
+  <div class="card-body bg-secondary">
+    <app-badge [tipos]="pkmn.types"></app-badge>
+    <!--button (click)="destruirCiclo()">Seek & destroy</button-->
+  </div>
+</div>
+<!--/div-->
