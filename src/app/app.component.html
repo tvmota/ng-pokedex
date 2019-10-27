@@ -1,5 +1,5 @@
 <div class="grid-box">
-  <header class="navbar p-2" role="header">
+  <header class="grid-header navbar p-2" role="header">
     <section class="navbar-section">
       <a routerLink="/" class="navbar-brand mr-2 c-hand">
         <img src="/assets/icons/pkmn.svg" alt="pkmn" width="60" height="60">
@@ -10,33 +10,15 @@
     </section>
   </header>
 
-  <main class="container mt-2">
+  <main class="container grid-main mt-2">
     <router-outlet></router-outlet>
-    <!--div class="columns mb-2">
-      <div class="column col-12">
-        <auto-complete></auto-complete>
-      </div>
-    </div>
-    <div class="columns mt-1">
-      <div class="column col-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12"  *ngFor="let pkmn of randomPkmn">
-        <card [pkmn]="pkmn"></card>
-      </div>
-    </div>
-    <div class="columns mt-1" *ngIf="!randomPkmn.length">
-      <div class="column col-12">
-        <div class="loading loading-lg"></div>
-        <h4 class="text-center">Carregando</h4>
-      </div>
-    </div-->
   </main>
 
-  <footer class="mt-2">
-    <nav class="navbar rodape-content">
-      <!--section class="navbar centered"-->
-        <h5 class="text-truncate text-secondary m-0">
-          <a class="text-secondary" href="https://github.com/tvmota" target="_blank">@Tiago Mota</a>&nbsp;//&nbsp;NgDex
-        </h5>
-      <!--/section-->
+  <footer class="grid-footer mt-2">
+    <nav class="grid-footer-content navbar rodape-content">
+      <h5 class="text-truncate text-secondary m-0">
+        <a class="text-secondary" href="https://github.com/tvmota" target="_blank">@Tiago Mota</a>&nbsp;//&nbsp;NgDex
+      </h5>
     </nav>
   </footer>
 </div>
